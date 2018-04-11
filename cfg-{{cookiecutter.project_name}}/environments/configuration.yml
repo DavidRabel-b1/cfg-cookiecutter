@@ -1,0 +1,163 @@
+---
+##########################
+# configuration
+
+configuration_directory: /opt/configuration
+configuration_git_repository: {{cookiecutter.repository}}
+
+##########################
+# docker
+
+{% raw -%}
+docker_user: "{{ operator_user }}"
+{%- endraw %}
+
+docker_configure_repository: no
+
+docker_configure_storage_driver: yes
+docker_storage_driver: overlay2
+
+docker_configure_insecure_registries: yes
+docker_insecure_registries:
+  - registry-1.osism.io
+
+docker_registry: index.docker.io
+
+##########################
+# repository
+
+repository_keys:
+  - https://download.docker.com/linux/ubuntu/gpg
+
+{% raw -%}
+repositories:
+  - name: docker
+    repository: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+  - name: "{{ ansible_distribution_release }}"
+    repository: "deb [arch=amd64] http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} main restricted universe multiverse"
+  - name: "{{ ansible_distribution_release }}-backports"
+    repository: "deb [arch=amd64] http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-backports main restricted universe multiverse"
+  - name: "{{ ansible_distribution_release }}-security"
+    repository: "deb [arch=amd64] http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-security main restricted universe multiverse"
+  - name: "{{ ansible_distribution_release }}-updates"
+    repository: "deb [arch=amd64] http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates main restricted universe multiverse"
+{%- endraw %}
+
+##########################
+# versions
+
+openstack_version: {{cookiecutter.openstack_version}}
+repository_version: {{cookiecutter.repository_version}}
+
+ceph_manager_version: {{cookiecutter.ceph_manager_version}}
+kolla_manager_version: {{cookiecutter.kolla_manager_version}}
+osism_manager_version: {{cookiecutter.osism_manager_version}}
+
+##########################
+# generic
+
+timezone_zone: UTC
+
+##########################
+# operator
+
+operator_user: dragon
+operator_group: dragon
+
+operator_authorized_keys:
+  - FIXME
+
+##########################
+# network-interfaces
+
+network_interface_required_packages: []
+
+##########################
+# proxy
+
+proxy_proxies: {}
+
+##########################
+# resolvconf
+
+resolvconf_nameserver:
+  - 8.8.8.8
+  - 8.8.4.4
+resolvconf_search: {{cookiecutter.domain}}
+resolvconf_package: ""
+
+##########################
+# hosts
+
+hosts_additional_entries: {}
+
+##########################
+# cleanup
+
+cleanup_services_common:
+  - iscsid
+  - lxcfs
+  - ntp
+  - snapd
+
+##########################
+# kolla
+
+kolla_internal_vip_address: {{cookiecutter.ip_internal}}
+kolla_external_vip_address: {{cookiecutter.ip_external}}
+
+##########################
+# serial
+
+osism_serial:
+  common: 100%
+  docker: 100%
+  grub: 100%
+  hardening: 100%
+  hostname: 100%
+  hosts: 100%
+  operator: 100%
+  pipelining: 100%
+  proxy: 100%
+  python: 100%
+  repository: 100%
+  resolvconf: 100%
+  timezone: 100%
+  utilities: 100%
+
+##########################
+# hardening
+
+security_ntp_servers:
+  - 1.de.pool.ntp.org
+  - 2.de.pool.ntp.org
+  - 3.de.pool.ntp.org
+  - 4.de.pool.ntp.org
+security_allowed_ntp_subnets:
+  - 127.0.0.1/32
+security_disable_module_usb_storage: yes
+security_umask_daemons_init: 027
+security_umask_login_defs: 077
+security_umask_csh: 077
+
+# NOTE: http://docs.openstack.org/developer/kolla-ansible/security.html#selinux
+security_enable_linux_security_module: no
+security_rhel7_enable_linux_security_module: no
+
+security_rhel7_remove_shosts_files: yes
+security_package_clean_on_remove: yes
+security_rhel7_automatic_package_updates: yes
+
+security_rhel7_session_timeout: 3600
+
+security_install_fail2ban: yes
+
+# NOTE(berendt): allow hmac-sha1 to make cockpit usable
+#                https://github.com/cockpit-project/cockpit/issues/8733
+security_sshd_allowed_macs: hmac-sha2-256,hmac-sha2-512,hmac-sha1
+
+##########################
+# ceph
+
+ceph_share_directory: /share
+ceph_cluster_fsid: {{cookiecutter.ceph_cluster_fsid}}

@@ -1,0 +1,15 @@
+---
+- name: Manage cronjobs on the manager node
+  hosts: manager
+  gather_facts: false
+
+  tasks:
+    - name: Run helper scripts non-interactive
+      cron:
+        name: INTERACTIVE
+        env: yes
+        value: "false"
+        cron_file: osism
+{%- raw %}
+        user: "{{ operator_user }}"{% endraw %}
+      become: true

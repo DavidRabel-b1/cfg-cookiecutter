@@ -1,0 +1,17 @@
+{
+    "ceph_version": "luminous",
+    "docker_version": "17.12.0",
+    "openstack_version": "ocata",
+    "ceph_manager_version": "latest",
+    "kolla_manager_version": "latest",
+    "osism_manager_version": "latest",
+    "repository_version": "latest",
+    "project_name": "cookiecutter",
+    "repository": "osism/cfg-cookiecutter",
+    "domain": "osism.io",
+    "fqdn_external": "api-1.osism.io",
+    "fqdn_internal": "api-1.osism.xyz",
+    "ip_external": "192.168.0.200",
+    "ip_internal": "192.168.0.100",
+    "ceph_cluster_fsid": "7866a038-d197-4d56-8f74-ffbb34aa4291"
+}

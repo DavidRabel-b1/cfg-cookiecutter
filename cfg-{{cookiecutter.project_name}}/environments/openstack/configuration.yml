@@ -1,0 +1,72 @@
+---
+openstack_environment_service:
+  username: admin
+{%- raw %}
+  password: "{{ keystone_admin_password }}"
+{%- endraw %}
+  project_name: service
+  auth_url: http://{{cookiecutter.fqdn_external}}:5000/v3
+  project_domain_name: default
+  user_domain_name: default
+
+openstack_glance_images:
+  - name: Cirros 0.4.0
+    format: qcow2
+    is_public: true
+    min_disk: 1
+    min_ram: 32
+    properties:
+      architecture: x86_64
+      hw_disk_bus: scsi
+      hw_scsi_model: virtio-scsi
+      os_distro: ubuntu
+      os_version: 0.4.0
+    url: http://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img
+
+  - name: Ubuntu 16.04 (Xenial Xerus)
+    format: qcow2
+    is_public: true
+    min_disk: 1
+    min_ram: 256
+    properties:
+      architecture: x86_64
+      hw_disk_bus: scsi
+      hw_scsi_model: virtio-scsi
+      os_version: 16.04
+      os_distro: ubuntu
+    url: https://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-disk1.img
+
+openstack_nova_aggregates:
+  - name: FIXME
+    availability_zone: FIXME
+    hosts:
+      - FIXME
+    metadata: {}
+
+openstack_nova_flavors:
+  - name: 1C-256MB-10GB
+    disk: 10
+    ephemeral: 0
+    flavorid: 10
+    is_public: True
+    ram: 256
+    swap: 0
+    vcpus: 1
+
+  - name: 1C-512MB-10GB
+    disk: 10
+    ephemeral: 0
+    flavorid: 20
+    is_public: True
+    ram: 512
+    swap: 0
+    vcpus: 1
+
+  - name: 1C-1GB-10GB
+    disk: 10
+    ephemeral: 0
+    flavorid: 30
+    is_public: True
+    ram: 1024
+    swap: 0
+    vcpus: 1

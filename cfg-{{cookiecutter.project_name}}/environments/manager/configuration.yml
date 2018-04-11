@@ -1,0 +1,18 @@
+---
+##########################
+# versions
+
+docker_version: {{cookiecutter.docker_version}}
+
+ceph_manager_version: {{cookiecutter.ceph_manager_version}}
+kolla_manager_version: {{cookiecutter.kolla_manager_version}}
+osism_manager_version: {{cookiecutter.osism_manager_version}}
+
+##########################
+# manager
+
+{%- raw -%}
+ara_server_host: "{{ hostvars[inventory_hostname]['ansible_' + management_interface]['ipv4']['address'] }}"
+cockpit_host: "{{ hostvars[inventory_hostname]['ansible_' + management_interface]['ipv4']['address'] }}"
+helper_host: "{{ hostvars[inventory_hostname]['ansible_' + management_interface]['ipv4']['address'] }}"
+{%- endraw %}

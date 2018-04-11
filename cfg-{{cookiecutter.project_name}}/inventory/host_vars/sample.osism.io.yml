@@ -1,0 +1,25 @@
+---
+management_interface: enp4s0
+internal_address: 10.1.10.10
+fluentd_host: 10.1.10.10
+
+##########################################################
+# network-interfaces
+
+network_allow_service_restart: no
+network_restart_method: nothing
+
+network_interfaces:
+  - device: enp4s0
+    method: static
+    address: 10.1.10.10
+    gateway: 10.1.10.1
+    netmask: 255.255.255.0
+    up:
+      - route add default gw 10.1.10.1
+
+##########################################################
+# kolla
+
+network_interface: enp4s0
+neutron_external_interface: enp5s0

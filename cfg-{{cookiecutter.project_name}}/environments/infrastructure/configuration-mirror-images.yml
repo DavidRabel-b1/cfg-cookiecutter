@@ -1,0 +1,7 @@
+---
+##########################
+# mirror-images
+
+docker_registry_external:
+docker_registry_internal:
+docker_namespace: osism
