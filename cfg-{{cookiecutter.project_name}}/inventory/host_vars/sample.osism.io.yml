@@ -1,4 +1,5 @@
 ---
+console_interface: enp4s0
 management_interface: enp4s0
 internal_address: 10.1.10.10
 fluentd_host: 10.1.10.10
@@ -22,4 +23,3 @@ network_interfaces:
 # kolla
 
 network_interface: enp4s0
-neutron_external_interface: enp5s0
