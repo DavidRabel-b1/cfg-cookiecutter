@@ -89,7 +89,9 @@ resolvconf_package: ""
 ##########################
 # hosts
 
-hosts_additional_entries: {}
+hosts_additional_entries:
+  {{cookiecutter.fqdn_external}}: {{cookiecutter.ip_external}}
+  {{cookiecutter.fqdn_internal}}: {{cookiecutter.ip_internal}}
 
 ##########################
 # cleanup
