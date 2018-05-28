@@ -7,10 +7,10 @@
 [cobbler]
 
 [helper]
-host-1.dom02.net ansible_host=10.1.10.10
+sample.osism.io ansible_host=10.1.10.10
 
 [manager]
-host-1.dom02.net ansible_host=10.1.10.10
+sample.osism.io ansible_host=10.1.10.10
 
 [mirror]
 
@@ -59,16 +59,16 @@ kibana
 # environment: kolla
 
 [control]
-host-1.dom02.net ansible_host=10.1.10.10
+sample.osism.io ansible_host=10.1.10.10
 
 [compute]
-host-1.dom02.net ansible_host=10.1.10.10
+sample.osism.io ansible_host=10.1.10.10
 
 [network]
-host-1.dom02.net ansible_host=10.1.10.10
+sample.osism.io ansible_host=10.1.10.10
 
 [storage]
-host-1.dom02.net ansible_host=10.1.10.10
+sample.osism.io ansible_host=10.1.10.10
 
 [grafana:children]
 control
