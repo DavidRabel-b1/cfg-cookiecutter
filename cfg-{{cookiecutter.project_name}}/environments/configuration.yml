@@ -54,7 +54,7 @@ kolla_manager_version: {{cookiecutter.kolla_manager_version}}
 osism_manager_version: {{cookiecutter.osism_manager_version}}
 
 ##########################
-# generic
+# timezone
 
 timezone_zone: UTC
 
@@ -94,7 +94,7 @@ hosts_additional_entries:
   {{cookiecutter.fqdn_internal}}: {{cookiecutter.ip_internal}}
 
 ##########################
-# cleanup
+# common
 
 cleanup_services_common:
   - iscsid
