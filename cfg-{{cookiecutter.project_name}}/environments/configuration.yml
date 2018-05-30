@@ -102,6 +102,8 @@ cleanup_services_common:
   - ntp
   - snapd
 
+install_microcode_package_common: yes
+
 ##########################
 # kolla
 
