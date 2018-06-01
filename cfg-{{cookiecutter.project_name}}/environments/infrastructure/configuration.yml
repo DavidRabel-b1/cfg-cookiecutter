@@ -17,7 +17,7 @@ configure_sshconfig: yes
 # cephclient
 
 {% raw -%}
-cephclient_keyring: "{{ lookup('file', 'ceph.client.admin.keyring') }}"
+cephclient_keyring: "{{ lookup('file', '{{ configuration_directory }}/environments/infrastructure/files/ceph/ceph.client.admin.keyring') }}"
 cephclient_keyring_name: client.admin
 cephclient_mons:
   - FIXME
