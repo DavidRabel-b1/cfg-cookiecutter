@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/osism/cfg-cookiecutter.svg?branch=master)](https://travis-ci.org/osism/cfg-cookiecutter)
 
+* http://cookiecutter.readthedocs.io/en/latest/
+
 ```
 $ cookiecutter https://github.com/osism/cfg-cookiecutter.git
 ```
