@@ -136,6 +136,9 @@ control
 [searchlight:children]
 control
 
+[redis:children]
+control
+
 # glance
 
 [glance-api:children]
@@ -189,6 +192,13 @@ network
 
 [neutron-vpnaas-agent:children]
 network
+
+[neutron-bgp-dragent:children]
+network
+
+[openvswitch:children]
+network
+compute
 
 # cinder
 
