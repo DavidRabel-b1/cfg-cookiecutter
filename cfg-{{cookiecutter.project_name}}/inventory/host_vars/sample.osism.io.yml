@@ -23,3 +23,13 @@ network_interfaces:
 # kolla
 
 network_interface: enp4s0
+storage_interface: enp4s0
+
+##########################################################
+# ceph
+
+devices:
+  - /dev/sdb
+  - /dev/sdc
+  - /dev/sdd
+  - /dev/sde
