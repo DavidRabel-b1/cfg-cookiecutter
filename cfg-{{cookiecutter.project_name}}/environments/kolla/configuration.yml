@@ -34,6 +34,15 @@ docker_restart_policy_retry: 0
 ##########################################################
 # openstack
 
+# enable services
+enable_cinder: "yes"
+enable_cinder_backup: "yes"
+enable_grafana: "yes"
+enable_heat: "yes"
+
+# disable services
+enable_chrony: "no"
+
 # generic
 
 # NOTE: This has to be "False", not "false"!
@@ -55,3 +64,17 @@ enable_neutron_provider_networks: "yes"
 
 # nova
 nova_console: novnc
+
+##########################################################
+# external ceph
+
+enable_ceph: "no"
+
+cinder_backend_ceph: "yes"
+glance_backend_ceph: "yes"
+nova_backend_ceph: "yes"
+
+cinder_backup_driver: "ceph"
+
+# NOTE: public_network from environments/ceph/configuration.yml
+ceph_public_network: FIXME
