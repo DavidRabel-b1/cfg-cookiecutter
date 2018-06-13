@@ -45,7 +45,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '-p', '--passwords', type=str,
-        default='passwords.yml',
+        default='environments/kolla/secrets.yml',
         help=('Path to the passwords.yml file'))
 
     args = parser.parse_args()
@@ -77,7 +77,7 @@ def main():
     # length of password
     length = 40
 
-    with open(passwords_file, 'r') as f:
+    with open("%s.%s" % (passwords_file, "{{ cookiecutter.openstack_version }}"), 'r') as f:
         passwords = yaml.safe_load(f.read())
 
     for k, v in passwords.items():
