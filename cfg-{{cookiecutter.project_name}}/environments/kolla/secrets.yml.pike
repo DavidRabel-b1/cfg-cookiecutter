@@ -214,3 +214,7 @@ etcd_cluster_token:
 # redis options
 ####################
 redis_master_password:
+
+# OSISM specific secrets
+
+prometheus_database_password:
