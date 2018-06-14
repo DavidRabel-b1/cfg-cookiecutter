@@ -1,6 +1,10 @@
 ##########################################################
 # custom host groups
 
+# environment: monitoring, playbook: prometheus-exporter
+
+[ipmitool]
+
 ##########################################################
 # environment: manager & infrastructure
 
