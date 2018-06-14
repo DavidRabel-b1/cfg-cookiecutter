@@ -51,9 +51,11 @@ kibana
 ##########################################################
 # environment: monitoring
 
-[monitoring]
+[monitoring:children]
+manager
 
-[prometheus]
+[prometheus:children]
+manager
 
 ##########################################################
 # environment: kolla
