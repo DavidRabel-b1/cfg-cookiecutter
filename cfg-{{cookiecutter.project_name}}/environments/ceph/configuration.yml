@@ -1,4 +1,81 @@
 ---
-# Dummy variable to avoid error because ansible does not recognize the
-# file as a good configuration file when no variable in it.
-dummy:
+##########################
+# generic
+
+containerized_deployment: true
+osd_objectstore: bluestore
+osd_scenario: collocated
+
+##########################
+# network
+
+public_network: FIXME
+cluster_network: FIXME
+
+##########################
+# pools & keys
+
+openstack_config: true
+
+openstack_glance_pool:
+  name: images
+  pg_num: 32
+  rule_name: ""
+openstack_cinder_pool:
+  name: volumes
+  pg_num: 32
+  rule_name: ""
+openstack_nova_pool:
+  name: vms
+  pg_num: 32
+  rule_name: ""
+openstack_cinder_backup_pool:
+  name: backups
+  pg_num: 32
+  rule_name: ""
+openstack_gnocchi_pool:
+  name: metrics
+  pg_num: 32
+  rule_name: ""
+
+openstack_pools:
+  - "{{ openstack_glance_pool }}"
+  - "{{ openstack_cinder_pool }}"
+  - "{{ openstack_nova_pool }}"
+  - "{{ openstack_cinder_backup_pool }}"
+  - "{{ openstack_gnocchi_pool }}"
+
+openstack_keys:
+  - name: client.glance
+    key: "$(ceph-authtool --gen-print-key)"
+    mon_cap: "allow r"
+    osd_cap: "allow class-read object_prefix rbd_children, allow rwx pool={{ openstack_glance_pool.name }}"
+    mode: "0600"
+    acls: []
+  - name: client.cinder
+    key: "$(ceph-authtool --gen-print-key)"
+    mon_cap: "allow r"
+    osd_cap: "allow class-read object_prefix rbd_children, allow rwx pool={{ openstack_cinder_pool.name }}, allow rwx pool={{ openstack_nova_pool.name }}, allow rx pool={{ openstack_glance_pool.name }}"
+    mode: "0600"
+    acls: []
+  - name: client.cinder-backup
+    key: "$(ceph-authtool --gen-print-key)"
+    mon_cap: "allow r"
+    osd_cap: "allow class-read object_prefix rbd_children, allow rwx pool={{ openstack_cinder_backup_pool.name }}"
+    mode: "0600"
+    acls: []
+  - name: client.gnocchi
+    key: "$(ceph-authtool --gen-print-key)"
+    mon_cap: "allow r"
+    osd_cap: "allow class-read object_prefix rbd_children, allow rwx pool={{ openstack_gnocchi_pool.name }}"
+    mode: "0600"
+    acls: []
+  - name: client.nova
+    key: "$(ceph-authtool --gen-print-key)"
+    mon_cap: "allow r"
+    osd_cap: "allow class-read object_prefix rbd_children, allow rwx pool=images, allow rwx pool=vms, allow rwx pool=volumes, allow rwx pool=backups"
+    mode: "0600"
+    acls: []
+
+##########################
+# custom
