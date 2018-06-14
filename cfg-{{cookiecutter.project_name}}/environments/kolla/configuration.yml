@@ -78,3 +78,6 @@ cinder_backup_driver: "ceph"
 
 # NOTE: public_network from environments/ceph/configuration.yml
 ceph_public_network: FIXME
+
+##########################################################
+# other
