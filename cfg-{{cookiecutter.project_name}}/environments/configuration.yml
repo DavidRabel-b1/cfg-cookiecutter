@@ -96,6 +96,7 @@ hosts_additional_entries:
 ##########################
 # common
 
+configure_cockpit: yes
 cleanup_services_common:
   - iscsid
   - lxcfs
