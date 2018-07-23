@@ -89,8 +89,9 @@ proxy_proxies: {}
 # resolvconf
 
 resolvconf_nameserver:
-  - 9.9.9.9
-  - 149.112.112.112
+{%- for name_server in cookiecutter.name_servers.get("values") %}
+  - {{ name_server }}
+{%- endfor %}
 resolvconf_search: {{cookiecutter.domain}}
 resolvconf_package: ""
 
@@ -146,10 +147,9 @@ osism_serial:
 # hardening
 
 security_ntp_servers:
-  - 1.de.pool.ntp.org
-  - 2.de.pool.ntp.org
-  - 3.de.pool.ntp.org
-  - 4.de.pool.ntp.org
+{%- for ntp_server in cookiecutter.ntp_servers.get("values") %}
+  - {{ ntp_server }}
+{%- endfor %}
 security_allowed_ntp_subnets:
   - 127.0.0.1/32
 security_disable_module_usb_storage: yes
