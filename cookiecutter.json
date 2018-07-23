@@ -1,18 +1,20 @@
 {
+    "ceph_manager_version": "latest",
     "ceph_version": "luminous",
     "docker_version": "18.03.1",
-    "openstack_version": "pike",
-    "ceph_manager_version": "latest",
-    "kolla_manager_version": "latest",
-    "osism_manager_version": "latest",
-    "repository_version": "latest",
-    "project_name": "cookiecutter",
-    "repository": "osism/cfg-cookiecutter",
     "domain": "osism.io",
     "fqdn_external": "api-1.osism.io",
     "fqdn_internal": "api-1.osism.xyz",
+    "git_repository": "osism/cfg-cookiecutter",
+    "git_server": "github.com",
+    "git_version": "master",
     "ip_external": "192.168.0.200",
     "ip_internal": "192.168.0.100",
+    "kolla_manager_version": "latest",
+    "openstack_version": "pike",
+    "osism_manager_version": "latest",
+    "project_name": "cookiecutter",
+    "repository_version": "latest",
     "_copy_without_render": [
         "environments/kolla/files/overlays/haproxy/haproxy.cfg.*"
     ]

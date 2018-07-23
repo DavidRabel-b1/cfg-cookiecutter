@@ -3,7 +3,15 @@
 # configuration
 
 configuration_directory: /opt/configuration
-configuration_git_repository: {{cookiecutter.repository}}
+
+configuration_type: git
+
+configuration_git_host: {{cookiecutter.git_server}}
+configuration_git_port: 22
+configuration_git_protocol: ssh
+configuration_git_repository: {{cookiecutter.git_repository}}
+configuration_git_username: git
+configuration_git_version: {{cookiecutter.git_version}}
 
 ##########################
 # docker
