@@ -145,6 +145,9 @@ control
 [redis:children]
 control
 
+[magnum:children]
+control
+
 # glance
 
 [glance-api:children]
@@ -291,3 +294,11 @@ searchlight
 
 [searchlight-listener:children]
 searchlight
+
+# magnum
+
+[magnum-api:children]
+magnum
+
+[magnum-conductor:children]
+magnum
