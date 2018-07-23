@@ -13,7 +13,7 @@ install:
 
 script:
   - cookiecutter --no-input .
-  - yamllint -c .yamllint.yml cfg-cookiecutter
+  - yamllint -c .yamllint.yml cfg-customer
 
 notifications:
   irc:

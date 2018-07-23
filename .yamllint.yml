@@ -9,4 +9,4 @@ rules:
   truthy: disable
 
 ignore: |
-  cfg-cookiecutter/environments/kolla/secrets.yml
+  cfg-customer/environments/kolla/secrets.yml
