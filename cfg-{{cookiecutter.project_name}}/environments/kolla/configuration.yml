@@ -24,7 +24,9 @@ node_custom_config: /opt/configuration/environments/kolla/files/overlays
 # haproxy
 
 kolla_internal_fqdn: {{cookiecutter.fqdn_internal}}
+{%- if cookiecutter.fqdn_external != cookiecutter.fqdn_internal %}
 kolla_external_fqdn: {{cookiecutter.fqdn_external}}
+{%- endif %}
 
 kolla_enable_tls_external: "yes"
 
