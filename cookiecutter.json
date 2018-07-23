@@ -6,7 +6,7 @@
     "fqdn_external": "api-1.osism.io",
     "fqdn_internal": "api-1.osism.xyz",
     "git_repository": "osism/cfg-cookiecutter",
-    "git_server": "github.com",
+    "git_host": "github.com",
     "git_version": "master",
     "ip_external": "192.168.0.200",
     "ip_internal": "192.168.0.100",

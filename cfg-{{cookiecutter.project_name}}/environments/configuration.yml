@@ -6,7 +6,7 @@ configuration_directory: /opt/configuration
 
 configuration_type: git
 
-configuration_git_host: {{cookiecutter.git_server}}
+configuration_git_host: {{cookiecutter.git_host}}
 configuration_git_port: 22
 configuration_git_protocol: ssh
 configuration_git_repository: {{cookiecutter.git_repository}}
