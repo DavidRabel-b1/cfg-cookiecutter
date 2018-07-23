@@ -7,3 +7,6 @@ rules:
     level: warning
 
   truthy: disable
+
+ignore: |
+  cfg-cookiecutter/environments/kolla/secrets.yml
