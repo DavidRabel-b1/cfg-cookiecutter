@@ -13,7 +13,7 @@ osism_manager_version: {{cookiecutter.osism_manager_version}}
 
 configure_cockpit: yes
 
-{%- raw -%}
+{% raw -%}
 ara_server_host: "{{ hostvars[inventory_hostname]['ansible_' + management_interface]['ipv4']['address'] }}"
 cockpit_host: "{{ hostvars[inventory_hostname]['ansible_' + management_interface]['ipv4']['address'] }}"
 helper_host: "{{ hostvars[inventory_hostname]['ansible_' + management_interface]['ipv4']['address'] }}"
