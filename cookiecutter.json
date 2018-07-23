@@ -1,6 +1,6 @@
 {
     "ceph_version": "luminous",
-    "docker_version": "17.12.0",
+    "docker_version": "18.03.1",
     "openstack_version": "pike",
     "ceph_manager_version": "latest",
     "kolla_manager_version": "latest",
