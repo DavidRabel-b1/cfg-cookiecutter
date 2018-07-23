@@ -21,6 +21,17 @@ config_strategy: COPY_ALWAYS
 node_custom_config: /opt/configuration/environments/kolla/files/overlays
 
 ##########################################################
+# haproxy
+
+kolla_internal_fqdn: {{cookiecutter.fqdn_internal}}
+kolla_external_fqdn: {{cookiecutter.fqdn_external}}
+
+kolla_enable_tls_external: "yes"
+
+haproxy_client_timeout: 5m
+haproxy_server_timeout: 5m
+
+##########################################################
 # networking
 
 # NOTE: The configuration of the network interfaces to be used should be done via the inventory.
