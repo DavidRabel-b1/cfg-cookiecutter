@@ -13,7 +13,6 @@
     "fqdn_internal": "api-1.osism.xyz",
     "ip_external": "192.168.0.200",
     "ip_internal": "192.168.0.100",
-    "ceph_cluster_fsid": "7866a038-d197-4d56-8f74-ffbb34aa4291",
     "_copy_without_render": [
         "environments/kolla/files/overlays/haproxy/haproxy.cfg.*"
     ]
