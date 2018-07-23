@@ -2,4 +2,4 @@
 # environment: manager
 
 [manager]
-sample.osism.io ansible_host=10.1.10.10 management_interface=enp4s0 console_interface=enp4s0
+sample.osism.io ansible_host=10.1.10.10
