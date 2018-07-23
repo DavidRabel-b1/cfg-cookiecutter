@@ -13,7 +13,7 @@
     "kolla_manager_version": "latest",
     "openstack_version": "pike",
     "osism_manager_version": "latest",
-    "project_name": "cookiecutter",
+    "project_name": "customer",
     "repository_version": "latest",
     "_copy_without_render": [
         "environments/kolla/files/overlays/haproxy/haproxy.cfg.*"
