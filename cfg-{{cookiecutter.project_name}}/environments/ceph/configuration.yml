@@ -6,6 +6,9 @@ containerized_deployment: true
 osd_objectstore: bluestore
 osd_scenario: collocated
 
+generate_fsid: false
+fsid: {{cookiecutter.ceph_fsid}}
+
 ##########################
 # network
 
