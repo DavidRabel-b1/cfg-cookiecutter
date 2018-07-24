@@ -1,6 +1,8 @@
 {
     "ceph_manager_version": "latest",
     "ceph_version": "luminous",
+    "ceph_network_backend": "192.168.101.0/24",
+    "ceph_network_frontend": "192.168.100.0/24",
     "docker_version": "18.03.1",
     "domain": "osism.io",
     "fqdn_external": "api-1.osism.io",

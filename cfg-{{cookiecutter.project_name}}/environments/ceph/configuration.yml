@@ -9,8 +9,8 @@ osd_scenario: collocated
 ##########################
 # network
 
-public_network: FIXME
-cluster_network: FIXME
+public_network: {{cookiecutter.ceph_network_frontend}}
+cluster_network: {{cookiecutter.ceph_network_backend}}
 
 ##########################
 # pools & keys
