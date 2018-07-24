@@ -83,3 +83,9 @@ openstack_keys:
 
 ##########################
 # custom
+
+ceph_conf_overrides:
+  mon:
+    mon allow pool delete: true
+  osd:
+    osd pool default size: 3
