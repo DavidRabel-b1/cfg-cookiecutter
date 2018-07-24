@@ -90,7 +90,7 @@ nova_backend_ceph: "yes"
 cinder_backup_driver: "ceph"
 
 # NOTE: public_network from environments/ceph/configuration.yml
-ceph_public_network: FIXME
+ceph_public_network: {{cookiecutter.ceph_network_frontend}}
 
 ##########################################################
 # other
