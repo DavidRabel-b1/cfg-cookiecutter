@@ -22,7 +22,7 @@ cephclient_keyring_name: client.admin
 cephclient_mons:
   - FIXME
 cephclient_cluster_fsid: "{{ ceph_cluster_fsid }}"
-cephclient_groupname: ceph
+cephclient_groupname: manager
 {%- endraw %}
 
 ##########################
