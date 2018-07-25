@@ -25,6 +25,8 @@ network_interfaces:
 network_interface: enp4s0
 storage_interface: enp4s0
 
+enable_neutron_provider_networks: "yes"
+
 ##########################################################
 # ceph
 
