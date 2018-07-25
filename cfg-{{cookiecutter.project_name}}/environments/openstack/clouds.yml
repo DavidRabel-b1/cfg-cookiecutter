@@ -5,7 +5,7 @@ clouds:
       username: admin
       password: password
       project_name: admin
-      auth_url: http://FIXME:5000/v3
+      auth_url: http://{{cookiecutter.fqdn_internal}}:5000/v3
       project_domain_name: default
       user_domain_name: default
     identity_api_version: 3

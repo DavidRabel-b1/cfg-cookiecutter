@@ -5,7 +5,7 @@ openstack_environment_service:
   password: "{{ keystone_admin_password }}"
 {%- endraw %}
   project_name: service
-  auth_url: http://{{cookiecutter.fqdn_external}}:5000/v3
+  auth_url: http://{{cookiecutter.fqdn_internal}}:5000/v3
   project_domain_name: default
   user_domain_name: default
 
