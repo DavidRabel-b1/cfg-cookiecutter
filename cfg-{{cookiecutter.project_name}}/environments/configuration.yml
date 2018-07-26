@@ -8,6 +8,7 @@ configuration_type: git
 
 configuration_git_host: {{cookiecutter.git_host}}
 configuration_git_port: {{cookiecutter.git_port}}
+configuration_git_public_key: FIXME
 configuration_git_protocol: ssh
 configuration_git_repository: {{cookiecutter.git_repository}}
 configuration_git_username: {{cookiecutter.git_username}}
