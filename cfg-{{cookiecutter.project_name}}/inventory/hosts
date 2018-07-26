@@ -4,6 +4,10 @@
 # environment: monitoring, playbook: prometheus-exporter
 
 [ipmitool]
+sample.osism.io ansible_host=10.1.10.10
+
+[smartmon]
+sample.osism.io ansible_host=10.1.10.10
 
 ##########################################################
 # environment: manager & infrastructure
@@ -17,6 +21,7 @@ sample.osism.io ansible_host=10.1.10.10
 sample.osism.io ansible_host=10.1.10.10
 
 [mirror]
+sample.osism.io ansible_host=10.1.10.10
 
 [infrastructure:children]
 cobbler
@@ -28,6 +33,7 @@ mirror
 # environment: ceph
 
 [ceph]
+sample.osism.io ansible_host=10.1.10.10
 
 [ceph-mds:children]
 ceph

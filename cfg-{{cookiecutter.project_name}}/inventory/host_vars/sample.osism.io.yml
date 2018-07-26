@@ -37,3 +37,8 @@ devices:
   - /dev/sde
 
 monitor_interface: enp4s0
+
+##########################################################
+# monitoring
+
+prometheus_scraper_interface: enp4s0
