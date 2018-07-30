@@ -33,15 +33,30 @@ docker_insecure_registries:
 docker_registry: index.docker.io
 
 ##########################
+# versions
+
+openstack_version: {{cookiecutter.openstack_version}}
+repository_version: {{cookiecutter.repository_version}}
+
+ceph_manager_version: {{cookiecutter.ceph_manager_version}}
+kolla_manager_version: {{cookiecutter.kolla_manager_version}}
+osism_manager_version: {{cookiecutter.osism_manager_version}}
+
+##########################
 # repository
 
 repository_keys:
   - https://download.docker.com/linux/ubuntu/gpg
+  - https://download.ceph.com/keys/release.asc
 
 {% raw -%}
 repositories:
+  - name: ceph
+    repository: "deb [arch=amd64] https://download.ceph.com/debian-luminous {{ ansible_distribution_release }} main"
   - name: docker
     repository: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+  - name: openstack
+    repository: "http://ubuntu-cloud.archive.canonical.com/ubuntu {{ ansible_distribution_release }}-updates/{{ openstack_version }} main"
   - name: "{{ ansible_distribution_release }}"
     repository: "deb [arch=amd64] http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} main restricted universe multiverse"
   - name: "{{ ansible_distribution_release }}-backports"
@@ -51,16 +66,6 @@ repositories:
   - name: "{{ ansible_distribution_release }}-updates"
     repository: "deb [arch=amd64] http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates main restricted universe multiverse"
 {%- endraw %}
-
-##########################
-# versions
-
-openstack_version: {{cookiecutter.openstack_version}}
-repository_version: {{cookiecutter.repository_version}}
-
-ceph_manager_version: {{cookiecutter.ceph_manager_version}}
-kolla_manager_version: {{cookiecutter.kolla_manager_version}}
-osism_manager_version: {{cookiecutter.osism_manager_version}}
 
 ##########################
 # timezone
