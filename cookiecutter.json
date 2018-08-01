@@ -23,6 +23,7 @@
     "project_name": "customer",
     "repository_version": "latest",
     "_copy_without_render": [
-        "environments/kolla/files/overlays/haproxy/haproxy.cfg.*"
+        "environments/kolla/files/overlays/haproxy/haproxy.cfg.*",
+        "environments/kolla/files/overlays/horizon/local_settings.j2.*"
     ]
 }
