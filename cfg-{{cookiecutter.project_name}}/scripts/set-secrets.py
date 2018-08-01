@@ -18,6 +18,8 @@ SECRETSFILE_OUTPUT_MONITORING = 'environments/monitoring/secrets.yml'
 
 yaml = YAML()
 yaml.explicit_start = True
+yaml.indent(mapping=2, sequence=4, offset=2)
+yaml.preserve_quotes = True
 
 with open(SECRETSFILE_INPUT) as fp:
     secrets_input = yaml.load(open(SECRETSFILE_INPUT))
