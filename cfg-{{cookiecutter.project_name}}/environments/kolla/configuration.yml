@@ -18,7 +18,9 @@ openstack_release: {{cookiecutter.openstack_version}}
 # kolla
 
 config_strategy: COPY_ALWAYS
-node_custom_config: /opt/configuration/environments/kolla/files/overlays
+{% raw -%}
+node_custom_config: "{{ configuration_directory }}/environments/kolla/files/overlays
+{%- endraw %}
 
 ##########################################################
 # haproxy

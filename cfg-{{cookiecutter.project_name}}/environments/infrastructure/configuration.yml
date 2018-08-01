@@ -28,8 +28,10 @@ cephclient_groupname: manager
 ##########################
 # openstackclient
 
-openstackclient_directory: /opt/configuration/environments/openstack
-openstackclient_configuration_directory: /opt/configuration/environments/openstack
+{% raw -%}
+openstackclient_directory: "{{ configuration_directory }}/environments/openstack"
+openstackclient_configuration_directory: "{{ configuration_directory }}/environments/openstack"
+{%- endraw %}
 
 ##########################
 # rally
