@@ -3,7 +3,6 @@
 # configuration
 
 configuration_directory: /opt/configuration
-
 configuration_type: git
 
 configuration_git_host: {{cookiecutter.git_host}}

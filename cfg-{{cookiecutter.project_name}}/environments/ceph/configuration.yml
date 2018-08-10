@@ -3,6 +3,7 @@
 # generic
 
 containerized_deployment: true
+
 osd_objectstore: bluestore
 osd_scenario: collocated
 
