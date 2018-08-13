@@ -56,7 +56,7 @@ repositories:
   - name: docker
     repository: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
   - name: openstack
-    repository: "http://ubuntu-cloud.archive.canonical.com/ubuntu {{ ansible_distribution_release }}-updates/{{ openstack_version }} main"
+    repository: "deb [arch=amd64] http://ubuntu-cloud.archive.canonical.com/ubuntu {{ ansible_distribution_release }}-updates/{{ openstack_version }} main"
   - name: "{{ ansible_distribution_release }}"
     repository: "deb [arch=amd64] http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} main restricted universe multiverse"
   - name: "{{ ansible_distribution_release }}-backports"
