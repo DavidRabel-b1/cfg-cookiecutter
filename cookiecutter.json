@@ -4,6 +4,7 @@
     "ceph_network_backend": "192.168.101.0/24",
     "ceph_network_frontend": "192.168.100.0/24",
     "ceph_version": "luminous",
+    "docker_registry": "index.docker.io",
     "docker_version": "18.03.1",
     "domain": "osism.io",
     "fqdn_external": "api-1.osism.io",

@@ -27,9 +27,10 @@ docker_storage_driver: overlay2
 
 docker_configure_insecure_registries: yes
 docker_insecure_registries:
+  - {{cookiecutter.docker_registry}}
   - registry-1.osism.io
 
-docker_registry: index.docker.io
+docker_registry: {{cookiecutter.docker_registry}}
 
 ##########################
 # versions

@@ -1,7 +1,13 @@
 ---
 ##########################
+# versions
+
+ceph_version: {{cookiecutter.ceph_version}}
+openstack_version: {{cookiecutter.openstack_version}}
+
+##########################
 # mirror-images
 
-docker_registry_external:
-docker_registry_internal:
+docker_registry_external: index.docker.io
+docker_registry_internal: {{cookiecutter.docker_registry}}
 docker_namespace: osism
