@@ -47,3 +47,42 @@ rally_nginx_host: "{{ hostvars[inventory_hostname]['ansible_' + management_inter
 phpmyadmin_host: "{{ hostvars[inventory_hostname]['ansible_' + management_interface]['ipv4']['address'] }}"
 phpmyadmin_database_host: "{{ kolla_internal_vip_address }}"
 {%- endraw %}
+
+##########################
+# aptly
+
+{% raw -%}
+aptly_repository_keys:
+  - https://download.docker.com/linux/ubuntu/gpg
+  - https://download.ceph.com/keys/release.asc
+
+aptly_repositories:
+  - name: ceph
+    architecture: amd64
+    distribution: "{{ ansible_distribution_release }}"
+    repository: "https://download.ceph.com/debian-{{ ceph_version }} {{ ansible_distribution_release }} main"
+  - name: docker
+    architecture: amd64
+    distribution: "{{ ansible_distribution_release }}"
+    repository: "https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+  - name: openstack
+    architecture: amd64
+    distribution: "{{ ansible_distribution_release }}"
+    repository: "http://ubuntu-cloud.archive.canonical.com/ubuntu {{ ansible_distribution_release }}-updates/{{ openstack_version }} main"
+  - name: "{{ ansible_distribution_release }}"
+    architecture: amd64
+    distribution: "{{ ansible_distribution_release }}"
+    repository: "http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} main restricted universe multiverse"
+  - name: "{{ ansible_distribution_release }}-backports"
+    architecture: amd64
+    distribution: "{{ ansible_distribution_release }}"
+    repository: "http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-backports main restricted universe multiverse"
+  - name: "{{ ansible_distribution_release }}-security"
+    architecture: amd64
+    distribution: "{{ ansible_distribution_release }}"
+    repository: "http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-security main restricted universe multiverse"
+  - name: "{{ ansible_distribution_release }}-updates"
+    architecture: amd64
+    distribution: "{{ ansible_distribution_release }}"
+    repository: "http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates main restricted universe multiverse"
+{%- endraw %}
