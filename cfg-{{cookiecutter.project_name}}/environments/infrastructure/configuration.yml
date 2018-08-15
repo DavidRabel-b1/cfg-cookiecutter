@@ -106,3 +106,14 @@ registry_host: "{{ hostvars[inventory_hostname]['ansible_' + management_interfac
 {% raw -%}
 nginx_host: "{{ hostvars[inventory_hostname]['ansible_' + management_interface]['ipv4']['address'] }}"
 {%- endraw %}
+
+mirror_files_files:
+  - url: https://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img
+    dest: cirros-0.4.0-x86_64-disk.img
+    checksum: "sha256:a8dd75ecffd4cdd96072d60c2237b448e0c8b2bc94d57f10fdbc8c481d9005b8"
+  - url: https://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-disk1.img
+    dest: xenial-server-cloudimg-amd64-disk1.img
+    checksum: "sha256:1cbcd7982061f60172fb90f2b08f5da155096d5c7d7979777a46cd36c722a15d"
+  - url: https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img
+    dest: bionic-server-cloudimg-amd64-disk1.img
+    checksum: "sha256:79387809763cdc12ea64dce5e9e6549127454847bebc206aae052d3e53822e91"
