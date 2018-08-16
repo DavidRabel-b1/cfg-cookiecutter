@@ -14,6 +14,7 @@ yaml = YAML()
 yaml.explicit_start = True
 yaml.indent(mapping=2, sequence=4, offset=2)
 yaml.preserve_quotes = True
+yaml.width = float("inf")
 
 # set private keys
 

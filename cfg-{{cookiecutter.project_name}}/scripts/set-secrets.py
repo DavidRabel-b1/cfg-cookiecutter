@@ -20,6 +20,7 @@ yaml = YAML()
 yaml.explicit_start = True
 yaml.indent(mapping=2, sequence=4, offset=2)
 yaml.preserve_quotes = True
+yaml.width = float("inf")
 
 with open(SECRETSFILE_INPUT) as fp:
     secrets_input = yaml.load(open(SECRETSFILE_INPUT))
