@@ -1,4 +1,5 @@
 cookiecutter
 oslo.utils
 pycrypto
+pyyaml
 ruamel.yaml
